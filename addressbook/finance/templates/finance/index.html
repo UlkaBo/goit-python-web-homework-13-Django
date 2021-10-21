@@ -1,0 +1,11 @@
+
+<h1>place for list all transaction</h1>
+{{object_list}}
+{% if output %}
+    <h2>yes</h2>
+{% else %}
+    <h2>no</h2>
+{% endif %}
+{% for el in object_list %}
+<h3>{{ el }}!</h3>
+{% endfor %}
