@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ab.apps.AbConfig',
     'finance.apps.FinanceConfig',
+    'user.apps.UserConfig',
     'crispy_forms'
 ]
 
@@ -57,7 +58,11 @@ ROOT_URLCONF = 'addressbook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'addressbook', 'templates', 'base'),
+            os.path.join(BASE_DIR, 'addressbook', 'templates', 'addressbook'),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,7 +90,15 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'TIME_ZONE': 'Europe/Kiev',
-
+    },
+    'ab': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'addressbook',
+        'USER': 'postgres',
+        'PASSWORD': '6894',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        'TIME_ZONE': 'Europe/Kiev',
     }
 }
 

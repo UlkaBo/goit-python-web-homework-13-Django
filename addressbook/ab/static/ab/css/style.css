@@ -1,0 +1,30 @@
+h1 {
+  color: #818181;
+}
+aside {
+  float: top;
+  background: #818181;
+  padding: 10px;
+  width: 100%;
+}
+aside ul {
+  list-style: none;
+  margin: 10px;
+}
+aside ul li {
+  display: inline;
+  margin: 20px 20px;
+
+  font-size: 20px;
+  transition: all 0.6s ease;
+}
+
+aside ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.6s ease;
+}
+
+aside li a:hover {
+  color: #000000;
+}

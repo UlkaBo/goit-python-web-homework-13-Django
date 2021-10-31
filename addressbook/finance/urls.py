@@ -1,6 +1,11 @@
+#! /usr/bin/env python3
+"""Urls for app finance
+"""
+
 from django.urls import path
 from . import views
 
+# pylint: disable=C0103
 app_name = 'finance'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
